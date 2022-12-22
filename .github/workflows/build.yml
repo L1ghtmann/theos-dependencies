@@ -1,3 +1,4 @@
+
 name: Build
 
 on:
@@ -22,12 +23,17 @@ jobs:
 
   build:
     needs: create_release
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@main
-      - name: The Work
+      - name: Build Debs
+        run: |
+          brew install ldid
+          export THEOS=~/theos
+          git clone --recursive https://github.com/theos/theos $THEOS
+          make fresh
+
+      - name: Attach Debs To Release
         run: |
           set -x
-          bash -c "$(curl -fsSL https://raw.githubusercontent.com/theos/theos/master/bin/install-theos)"
-          make all
           gh release upload ${GITHUB_REF##*/} debs/*.deb

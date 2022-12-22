@@ -1,0 +1,33 @@
+name: Build
+
+on:
+  - push
+  - workflow_dispatch
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  create_release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        with:
+          tag_name: ${{ github.ref_name }}
+          release_name: Draft Release
+          body: ''
+          draft: true
+
+  build:
+    needs: create_release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - name: The Work
+        run: |
+          set -x
+          bash -c "$(curl -fsSL https://raw.githubusercontent.com/theos/theos/master/bin/install-theos)"
+          make all
+          gh release upload ${GITHUB_REF##*/} debs/*.deb

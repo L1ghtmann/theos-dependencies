@@ -5,7 +5,7 @@ Conflicts: dev.theos.dependencies2, org.theos.dependencies, theos-dependencies
 Provides: org.theos.dependencies, theos-dependencies
 Version: 1.0.0
 Architecture: iphoneos-arm
-Description: What Theos needs.
+Description:
  Add coolstar's repository before installing this package https://coolstar.org/publicrepo/
  Add sbingner's repository before installing this package https://repo.bingner.com/
 

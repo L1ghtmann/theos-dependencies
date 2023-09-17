@@ -1,6 +1,7 @@
 Package: dev.theos.dependencies2
 Name: Theos Dependencies
-Depends: ca-certificates, clang, coreutils, curl, dpkg, firmware (>=12.0), git, grep, ldid, make, odcctools, perl, plutil | com.bingner.plutil | libplist-utils, rsync, xz | xz-utils
+Depends: clang, curl, firmware (>=12.0), git, grep, gzip, ldid, make, odcctools, perl, rsync, xz | xz-utils
+Reccomends: plutil | com.bingner.plutil | libplist-utils, swift, zip
 Conflicts: dev.theos.dependencies, org.theos.dependencies, theos-dependencies
 Provides: org.theos.dependencies, theos-dependencies
 Version: 1.0.0
@@ -9,8 +10,8 @@ Description:
  Procursus-based jailbreaks, add https://apt.procursus.us before installing this package
  Elucubratus-based jailbreaks, add https://apt.bingner.com before installing this package
 
- A meta package that provides what Theos needs including cacerts, clang, coreutils, curl, dpkg,
- git, grep, ldid, make, darwin cc tools, perl, plutil or plistutil, rsync, and xz utils.
+ A meta package that provides what Theos needs including
+ curl, git, grep, gzip, perl, rsync, xz utils, and a toolchain.
 
  For devices running iOS >= 12.0. For devices running iOS << 12.0, see dev.theos.dependencies.
 Maintainer: lightmann

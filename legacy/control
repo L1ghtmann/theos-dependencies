@@ -1,6 +1,7 @@
 Package: dev.theos.dependencies
 Name: Theos Dependencies (Legacy)
-Depends: ca-certificates | org.thebigboss.cacerts, coreutils, curl, dpkg, firmware (<< 12), git, grep, org.coolstar.iostoolchain, firmware (= 11) | org.coolstar.perl, firmware (<< 11) | perl, com.bingner.plutil | libplist-utils, rsync
+Depends: ca-certificates | org.thebigboss.cacerts, coreutils, curl, firmware (<< 12), git, grep, org.coolstar.iostoolchain, firmware (= 11) | org.coolstar.perl, firmware (<< 11) | perl, rsync
+Reccomends: com.bingner.plutil | libplist-utils
 Conflicts: dev.theos.dependencies2, org.theos.dependencies, theos-dependencies
 Provides: org.theos.dependencies, theos-dependencies
 Version: 1.0.0
@@ -9,8 +10,8 @@ Description:
  Add coolstar's repository before installing this package https://coolstar.org/publicrepo/
  Add sbingner's repository before installing this package https://repo.bingner.com/
 
- A meta package that provides what Theos needs including cacerts, coreutils, curl, dpkg,
- git, grep, the iOS toolchain, perl, plutil or plistutil, and rsync.
+ A meta package that provides what Theos needs including
+ cacerts, coreutils, curl, git, grep, the iOS toolchain, perl, and rsync.
 
  For devices running iOS << 12.0. For devices running iOS >= 12.0, see dev.theos.dependencies2.
 Maintainer: lightmann
